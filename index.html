@@ -265,63 +265,12 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
   cursor: pointer; color: #555;
 }
 
-/* Like button */
-.like-section {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid #ece8e0;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.like-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.4rem;
-  border: 1px solid #ccc;
-  border-radius: 24px;
-  background: #fff;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 0.85rem;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  letter-spacing: 0.05em;
-}
-.like-btn:hover {
-  border-color: #e8a0a0;
-  color: #c0392b;
-  background: #fff8f8;
-}
-.like-btn.liked {
-  border-color: #c0392b;
-  color: #c0392b;
-  background: #fff8f8;
-}
-.like-btn .like-icon {
-  font-size: 1rem;
-  transition: transform 0.2s ease;
-}
-.like-btn.liked .like-icon {
-  transform: scale(1.2);
-}
-.like-count {
-  font-size: 0.82rem;
-  color: #aaa;
-  letter-spacing: 0.05em;
-}
-.like-count.has-likes {
-  color: #c0392b;
-}
-
 /* Print styles */
 @media print {
   nav { display: none; }
   .page { padding: 40px 20px; min-height: auto; }
   .page-break { page-break-after: always; border-bottom: none; }
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .like-section { display: none; }
 }
 
 /* Responsive — Tablet */
@@ -511,13 +460,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>マウントをとらず、証を共有し合える付き合いをつくる。「自分たちが主人公である摂理の走り方」を共に模索する姿勢を大切にする。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p1" onclick="toggleLike('p1', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p1"></span>
-  </div>
 </div>
 <div class="page page-break" id="p2">
   <div class="pattern-header">
@@ -547,13 +489,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>「暇な人ほど罪を犯している」「信仰があるようでも実は最優先でない人が多い」という現実を直視し、まず自分が信仰を生活の最優先事項にしているかを問う。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p2" onclick="toggleLike('p2', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p2"></span>
-  </div>
 </div>
 <div class="page page-break" id="p3">
   <div class="pattern-header">
@@ -582,13 +517,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
     <ul>
       <li>努力していることは積極的に開示する。みんな当たり前にやっていると思われがちだが、実際には葛藤しながらやっていることを見せることが大事。</li>
     </ul>
-  </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p3" onclick="toggleLike('p3', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p3"></span>
   </div>
 </div>
 
@@ -629,13 +557,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>霊的なことだけでなく社会での出来事も気軽に発信・反応できる場（LINEグループ等）を作る。指導者はそれを把握しながら個別にヘルプしたり、必要な糧を発信する。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p4" onclick="toggleLike('p4', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p4"></span>
-  </div>
 </div>
 <div class="page page-break" id="p5">
   <div class="pattern-header">
@@ -666,13 +587,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>早期に牧会者につなげることが大事。1on1面談で一時回復したケースもある。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p5" onclick="toggleLike('p5', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p5"></span>
-  </div>
 </div>
 <div class="page page-break" id="p6">
   <div class="pattern-header">
@@ -702,13 +616,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>教会で自分たちが社会でやってることをお互いに発表し、お互いのために祈る場を設けた。仕事の苦労も分かち合える関係ができた。</li>
       <li>使命推薦の際は、なぜその人を推薦したいのか「I（愛）メッセージ」で言語化して伝える。</li>
     </ul>
-  </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p6" onclick="toggleLike('p6', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p6"></span>
   </div>
 </div>
 
@@ -748,13 +655,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>一般的なメンバーと特に手厚いケアが必要なメンバーは分けて考える。全員を同じ強度で個別管理しようとすると、全体の士気が下がり守りがメインになる。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p7" onclick="toggleLike('p7', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p7"></span>
-  </div>
 </div>
 <div class="page page-break" id="p8">
   <div class="pattern-header">
@@ -785,13 +685,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>中間リーダーを挟まず、牧会者が直接メンバーと対話する仕組みも有効。全員と直接話したことで、余裕を持って活動できる人が増えた。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p8" onclick="toggleLike('p8', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p8"></span>
-  </div>
 </div>
 <div class="page page-break" id="p9">
   <div class="pattern-header">
@@ -820,13 +713,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
     <ul>
       <li>「死ぬまで摂理に居ようと思っている人と、そうでない人がいる」という現実を理解した上で、どちらのタイプであっても手を離さない覚悟を持つ。</li>
     </ul>
-  </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p9" onclick="toggleLike('p9', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p9"></span>
   </div>
 </div>
 <div class="page page-break" id="p10">
@@ -858,13 +744,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>男性は大きなビジョンに憧れを感じる。狭いところに閉じ込めず、摂理の広さを見せてあげる。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p10" onclick="toggleLike('p10', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p10"></span>
-  </div>
 </div>
 <div class="page page-break" id="p11">
   <div class="pattern-header">
@@ -894,13 +773,6 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
       <li>先輩がやってたこと以外もやる。可能性は無限大。自分たちが主人公である摂理の走り方を模索する。</li>
     </ul>
   </div>
-  <div class="like-section">
-    <button class="like-btn" id="like-p11" onclick="toggleLike('p11', this)">
-      <span class="like-icon">♡</span>
-      <span>役に立った</span>
-    </button>
-    <span class="like-count" id="count-p11"></span>
-  </div>
 </div>
 
 <!-- Footer -->
@@ -908,106 +780,5 @@ nav .nav-title { font-weight: 700; color: #1a1a1a; font-size: 0.85rem; }
   <p>命を活かすことば — Pattern Language — Ver 2.3 ドラフト</p>
 </div>
 
-
-<!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCIdoJoOfZXEBRXZsGxn9uar9HMuXzllSw",
-    authDomain: "patternlanguage.firebaseapp.com",
-    projectId: "patternlanguage",
-    storageBucket: "patternlanguage.firebasestorage.app",
-    messagingSenderId: "847936648120",
-    appId: "1:847936648120:web:ec04165b0cc4fcc2be954d"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Load like counts on page load
-  async function loadLikeCounts() {
-    for (let i = 1; i <= 11; i++) {
-      const patternId = `p${i}`;
-      try {
-        const docRef = doc(db, "likes", patternId);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const count = docSnap.data().count || 0;
-          updateCountDisplay(patternId, count);
-        }
-      } catch (e) {
-        // silently fail
-      }
-    }
-  }
-
-  function updateCountDisplay(patternId, count) {
-    const countEl = document.getElementById(`count-${patternId}`);
-    if (countEl) {
-      if (count > 0) {
-        countEl.textContent = `${count} 人が役に立ったと感じています`;
-        countEl.classList.add('has-likes');
-      } else {
-        countEl.textContent = '';
-        countEl.classList.remove('has-likes');
-      }
-    }
-  }
-
-  // Toggle like
-  window.toggleLike = async function(patternId, btn) {
-    const likedKey = `liked_${patternId}`;
-    const isLiked = localStorage.getItem(likedKey) === 'true';
-
-    // Optimistic UI update
-    if (!isLiked) {
-      btn.classList.add('liked');
-      btn.querySelector('.like-icon').textContent = '♥';
-      localStorage.setItem(likedKey, 'true');
-    } else {
-      btn.classList.remove('liked');
-      btn.querySelector('.like-icon').textContent = '♡';
-      localStorage.removeItem(likedKey);
-    }
-
-    // Update Firestore
-    try {
-      const docRef = doc(db, "likes", patternId);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        await updateDoc(docRef, { count: increment(isLiked ? -1 : 1) });
-        const newSnap = await getDoc(docRef);
-        updateCountDisplay(patternId, newSnap.data().count || 0);
-      } else {
-        if (!isLiked) {
-          await setDoc(docRef, { count: 1, patternId: patternId });
-          updateCountDisplay(patternId, 1);
-        }
-      }
-    } catch (e) {
-      // silently fail - UI already updated
-    }
-  };
-
-  // Restore liked state from localStorage
-  function restoreLikedState() {
-    for (let i = 1; i <= 11; i++) {
-      const patternId = `p${i}`;
-      if (localStorage.getItem(`liked_${patternId}`) === 'true') {
-        const btn = document.getElementById(`like-${patternId}`);
-        if (btn) {
-          btn.classList.add('liked');
-          btn.querySelector('.like-icon').textContent = '♥';
-        }
-      }
-    }
-  }
-
-  // Initialize
-  restoreLikedState();
-  loadLikeCounts();
-</script>
 </body>
 </html>
